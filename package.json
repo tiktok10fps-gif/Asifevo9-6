@@ -1,0 +1,13 @@
+{
+  "name": "messenger-group-bot",
+  "version": "1.0.0",
+  "description": "Messenger style real-time group chatbot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  }
+}
