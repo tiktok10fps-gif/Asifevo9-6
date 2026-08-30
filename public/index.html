@@ -1,1 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Messenger Group Bot</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <div class="brand">
+      <div class="brand-icon">💬</div>
+
+      <div>
+        <h2>Messenger</h2>
+        <span>Group Chat</span>
+      </div>
+    </div>
+
+    <div class="profile">
+      <div class="avatar" id="profileAvatar">
+        ?
+      </div>
+
+      <div>
+        <strong id="profileName">
+          Guest
+        </strong>
+
+        <small>
+          Online 🟢
+        </small>
+      </div>
+    </div>
+
+    <button id="newGroupBtn" class="new-group">
+      ＋ New Group
+    </button>
+
+    <div class="section-title">
+      GROUPS
+    </div>
+
+    <div id="groupList" class="group-list">
+      Loading...
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN -->
+
+  <main class="chat">
+
+    <header class="chat-header">
+
+      <div class="chat-info">
+
+        <div class="group-avatar" id="groupAvatar">
+          G
+        </div>
+
+        <div>
+
+          <h3 id="groupName">
+            Select a group
+          </h3>
+
+          <span id="onlineText">
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+      <button id="membersBtn" class="header-btn">
+        👥
+      </button>
+
+    </header>
+
+
+    <!-- MESSAGES -->
+
+    <section id="messages" class="messages">
+
+      <div class="welcome">
+
+        <div class="welcome-icon">
+          🤖
+        </div>
+
+        <h2>Welcome to Group Chat</h2>
+
+        <p>
+          Join a group and start chatting.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div id="typing" class="typing"></div>
+
+
+    <!-- INPUT -->
+
+    <footer class="composer">
+
+      <button class="attach">
+        ＋
+      </button>
+
+      <input
+        id="messageInput"
+        type="text"
+        placeholder="Type a message..."
+        autocomplete="off"
+      >
+
+      <button
+        id="sendBtn"
+        class="send"
+      >
+        ➤
+      </button>
+
+    </footer>
+
+  </main>
+
+
+  <!-- MEMBERS PANEL -->
+
+  <section
+    id="membersPanel"
+    class="members-panel hidden"
+  >
+
+    <div class="members-header">
+
+      <h3>Members</h3>
+
+      <button id="closeMembers">
+        ×
+      </button>
+
+    </div>
+
+    <div id="membersList"></div>
+
+  </section>
+
+</div>
+
+
+<!-- LOGIN MODAL -->
+
+<div id="loginModal" class="modal">
+
+  <div class="modal-card">
+
+    <div class="modal-icon">
+      👤
+    </div>
+
+    <h2>Join Messenger</h2>
+
+    <p>
+      Enter your display name.
+    </p>
+
+    <input
+      id="usernameInput"
+      maxlength="30"
+      placeholder="Your name"
+    >
+
+    <button id="loginBtn">
+      Continue
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- NEW GROUP MODAL -->
+
+<div id="groupModal" class="modal hidden">
+
+  <div class="modal-card">
+
+    <h2>Create Group</h2>
+
+    <input
+      id="groupNameInput"
+      maxlength="40"
+      placeholder="Group name"
+    >
+
+    <div class="modal-actions">
+
+      <button id="cancelGroup">
+        Cancel
+      </button>
+
+      <button id="createGroup">
+        Create
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
